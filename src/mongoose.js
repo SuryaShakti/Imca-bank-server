@@ -1,14 +1,13 @@
-const mongoose = require('mongoose');
-const logger = require('./logger');
+import mongoose from 'mongoose';
+import logger from './logger';
 
-module.exports = function (app) {
-  mongoose.connect(
-    app.get('mongodb'),
-    { useCreateIndex: true, useNewUrlParser: true }
-  ).catch(err => {
-    logger.error(err);
-    process.exit(1);
-  });
+export default function (app) {
+    mongoose
+        .connect(app.get('mongodb'), { useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true })
+        .catch((err) => {
+            logger.error(err);
+            process.exit(1);
+        });
 
-  app.set('mongooseClient', mongoose);
-};
+    app.set('mongooseClient', mongoose);
+}

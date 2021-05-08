@@ -9,10 +9,11 @@
   "authentication": {
     "entity": "user",
     "service": "user",
-    "secret": "Y5hssq4/cPjnpXXBaI0LdlqTHJ4=",
+    "secret": "+oo9+eJub+CHuN5mJhy8YySuyiY=",
     "authStrategies": [
       "jwt",
-      "local"
+      "email",
+      "customer"
     ],
     "jwtOptions": {
       "header": {
@@ -21,12 +22,17 @@
       "audience": "https://yourdomain.com",
       "issuer": "feathers",
       "algorithm": "HS256",
-      "expiresIn": "1d"
+      "expiresIn": "365d"
     },
-    "local": {
-      "usernameField": "email",
-      "passwordField": "password"
+    "email": {
+        "usernameField": "email",
+        "passwordField": "password"
+    },
+    "customer": {
+        "usernameField": "customerId",
+        "passwordField": "password"
     }
+
   },
   "mongodb": "mongodb+srv://imca:Imca@123@imca-bank.sjdqc.mongodb.net/imca-bank"
 }

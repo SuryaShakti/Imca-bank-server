@@ -1,33 +1,30 @@
-const path = require('path');
-const favicon = require('serve-favicon');
-const compress = require('compression');
-const helmet = require('helmet');
-const cors = require('cors');
-const logger = require('./logger');
-
-const feathers = require('@feathersjs/feathers');
-const configuration = require('@feathersjs/configuration');
-const express = require('@feathersjs/express');
-const socketio = require('@feathersjs/socketio');
-
-
-const middleware = require('./middleware');
-const services = require('./services');
-const appHooks = require('./app.hooks');
-const channels = require('./channels');
-
-const authentication = require('./authentication');
-
-const mongoose = require('./mongoose');
+import path from 'path';
+import favicon from 'serve-favicon';
+import compress from 'compression';
+import helmet from 'helmet';
+import cors from 'cors';
+import logger from './logger';
+import feathers from '@feathersjs/feathers';
+import configuration from '@feathersjs/configuration';
+import express from '@feathersjs/express';
+import socketio from '@feathersjs/socketio';
+import middleware from './middleware';
+import services from './services';
+import appHooks from './app.hooks';
+import channels from './channels';
+import authentication from './authentication';
+import mongoose from './mongoose';
 
 const app = express(feathers());
 
 // Load app configuration
 app.configure(configuration());
 // Enable security, CORS, compression, favicon and body parsing
-app.use(helmet({
-  contentSecurityPolicy: false
-}));
+app.use(
+    helmet({
+        contentSecurityPolicy: false,
+    }),
+);
 app.use(cors());
 app.use(compress());
 app.use(express.json());
@@ -56,4 +53,4 @@ app.use(express.errorHandler({ logger }));
 
 app.hooks(appHooks);
 
-module.exports = app;
+export default app;
