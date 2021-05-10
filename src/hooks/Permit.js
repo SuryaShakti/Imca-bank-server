@@ -3,12 +3,11 @@ import { Forbidden } from '@feathersjs/errors';
 const roleNames = {
     1: 'user',
     2: 'admin',
-    3: 'super-admin',
 };
 
 /**
  *
- * @param roles {"user"|"admin"|"super-admin"}
+ * @param roles {"user"|"admin"}
  * @returns {function(...[*]=)}
  * @constructor
  */
