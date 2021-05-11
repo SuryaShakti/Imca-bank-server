@@ -166,7 +166,7 @@ export default function (app) {
                     /**
                      * @description Make sharable link for file
                      */
-                    let link = `https://drive.google.com/thumbnail?id=${response.data.id}`;
+                    let link = `https://drive.google.com/uc?export=view&id=${response.data.id}`;
 
                     uploadedFiles.push(link);
 
