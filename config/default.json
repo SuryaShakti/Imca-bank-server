@@ -29,5 +29,6 @@
     }
 
   },
-  "mongodb": "mongodb+srv://imca:Imca@123@imca-bank.sjdqc.mongodb.net/imca-bank"
+  "mongodb": "MONGO_URL",
+  "CREDENTIALS_PATH": "GOOGLE_APPLICATION_CREDENTIALS"
 }
