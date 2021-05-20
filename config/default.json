@@ -12,7 +12,6 @@
     "secret": "+oo9+eJub+CHuN5mJhy8YySuyiY=",
     "authStrategies": [
       "jwt",
-      "email",
       "customer"
     ],
     "jwtOptions": {
@@ -24,15 +23,12 @@
       "algorithm": "HS256",
       "expiresIn": "365d"
     },
-    "email": {
-        "usernameField": "email",
-        "passwordField": "password"
-    },
     "customer": {
         "usernameField": "customerId",
         "passwordField": "password"
     }
 
   },
-  "mongodb": "mongodb+srv://imca:Imca@123@imca-bank.sjdqc.mongodb.net/imca-bank"
+  "mongodb": "MONGO_URL",
+  "CREDENTIALS_PATH": "GOOGLE_APPLICATION_CREDENTIALS"
 }

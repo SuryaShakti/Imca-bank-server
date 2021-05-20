@@ -1,5 +1,4 @@
 /**
- * Created By Soumya(soumya@smarttersstudio.com) on 31/03/21 at 9:46 PM.
  * @description Generate code (referral code, coupon code)
  */
 import { customAlphabet } from 'nanoid';

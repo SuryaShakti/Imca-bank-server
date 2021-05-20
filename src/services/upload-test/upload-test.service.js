@@ -16,7 +16,7 @@ export default function (app) {
      * Get your credentials.json file path
      * @type {string}
      */
-    const CREDENTIALS_PATH = 'drivecredentials.json';
+    const CREDENTIALS_PATH = app.get('CREDENTIALS_PATH');
 
     let storage = multer.memoryStorage();
     let upload = multer({ storage: storage });
@@ -71,7 +71,7 @@ export default function (app) {
 
                 for (const file of files) {
                     const { size } = file;
-                    if (storageUsage + size > storageLimit) {
+                    if (parseInt(storageUsage) + size > parseInt(storageLimit)) {
                         req.body = {
                             result: false,
                             message: 'Drive storage full.',
@@ -170,6 +170,8 @@ export default function (app) {
 
                     uploadedFiles.push(link);
 
+                    console.log(uploadedFiles);
+
                     fs.rmSync(pathToFile);
                 }
                 req.body = {
@@ -178,7 +180,7 @@ export default function (app) {
                 };
                 next();
             } catch (e) {
-                // console.log(e);
+                console.log(e);
                 req.body = {
                     result: false,
                     message: e.message,
