@@ -13,10 +13,10 @@ export default (app) => {
 
     const service = app.service('authentication');
 
-    service.hooks ({
+    service.hooks({
         after: {
-            create: [GetAllBankAccounts()]
-        }
+            create: [GetAllBankAccounts()],
+        },
     });
 
     app.configure(expressOauth());
