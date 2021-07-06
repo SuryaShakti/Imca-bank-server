@@ -12,6 +12,7 @@
     "secret": "+oo9+eJub+CHuN5mJhy8YySuyiY=",
     "authStrategies": [
       "jwt",
+      "email",
       "customer"
     ],
     "jwtOptions": {
@@ -23,11 +24,14 @@
       "algorithm": "HS256",
       "expiresIn": "365d"
     },
+    "email": {
+        "usernameField": "email",
+        "passwordField": "password"
+    },
     "customer": {
         "usernameField": "customerId",
         "passwordField": "password"
     }
-
   },
   "mongodb": "MONGO_URL",
   "CREDENTIALS_PATH": "GOOGLE_APPLICATION_CREDENTIALS"

@@ -7,6 +7,7 @@ export default (app) => {
     const authentication = new AuthenticationService(app);
 
     authentication.register('jwt', new JWTStrategy());
+    authentication.register('email', new LocalStrategy());
     authentication.register('customer', new LocalStrategy());
 
     app.use('/authentication', authentication);
