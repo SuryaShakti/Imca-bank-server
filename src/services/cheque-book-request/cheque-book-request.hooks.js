@@ -10,6 +10,7 @@ import patchDeleted from '../../hooks/patchDeleted';
 import setDefaultItem from '../../hooks/setDefaultItem';
 import setDefaultQuery from '../../hooks/setDefaultQuery';
 import HasData from '../../utils/HasData';
+import IncreaseRequestCount from './hooks/IncreaseRequestCount';
 
 const { authenticate } = feathersAuthentication.hooks;
 
@@ -40,7 +41,7 @@ export default {
         all: [],
         find: [],
         get: [],
-        create: [],
+        create: [IncreaseRequestCount()],
         update: [],
         patch: [],
         remove: [],

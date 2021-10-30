@@ -7,6 +7,7 @@ import setCreatedBy from '../../hooks/setCreatedBy';
 import GenerateTransactionNumber from './hooks/GenerateTransactionNumber';
 import ValidateBalance from './hooks/ValidateBalance';
 import DeductAmount from './hooks/DeductAmount';
+import AddBalanceToAccount from './hooks/AddBalanceToAccount';
 
 const { authenticate } = feathersAuthentication.hooks;
 
@@ -25,7 +26,7 @@ export default {
         all: [],
         find: [],
         get: [],
-        create: [DeductAmount()],
+        create: [DeductAmount(), AddBalanceToAccount()],
         update: [],
         patch: [],
         remove: [],
