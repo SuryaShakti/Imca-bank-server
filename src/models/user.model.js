@@ -62,6 +62,10 @@ export default function (app) {
                 ],
                 default: 1,
             },
+            requestCount: {
+                type: Number,
+                default: 0,
+            },
             gender: {
                 type: Number,
                 enum: [
